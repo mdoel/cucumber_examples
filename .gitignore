@@ -1,0 +1,5 @@
+java/hellocucumber/target/*
+java/hellocucumber/.settings/*
+java/hellocucumber/hellocucumber/*
+java/hellocucumber/.classpath
+java/hellocucumber/.vscode/*
