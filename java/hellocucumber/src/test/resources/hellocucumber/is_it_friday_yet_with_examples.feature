@@ -1,5 +1,5 @@
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
+Feature: Is it Friday yet (with examples)?
+  Everybody wants to know when it's Friday. Let us test with a bunch of examples.
 
   Scenario Outline: Today is or is not Friday
     Given today is "<day>"
