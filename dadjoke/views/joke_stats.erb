@@ -1,0 +1,13 @@
+<div class="likestat">
+  You have liked <span id="likes"><%=@joke_stats.likes%></span> jokes.
+</div>
+<div class="likestat">
+  You have disliked <span id="dislikes"><%=@joke_stats.dislikes%></span> jokes.
+</div>
+<div>
+  Why stop now when you can see more jokes?
+  <form method="post" action="/showjoke">
+    <%= erb :joke_form_params %>
+    <button class="btn-primary">Show me another</button>
+  </form>
+</div>

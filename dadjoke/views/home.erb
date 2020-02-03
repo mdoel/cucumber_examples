@@ -1,0 +1,11 @@
+<div class="about">
+  <p>
+    Are you skeptical of dad jokes? This app will help make you a fan. Using the jokes supplied by
+    <a href="https://www.icanhazdadjoke.com">the best source of Dad Jokes</a> on the internet, you
+    can see how often they actually make you chuckle.
+  </p>
+</div>
+<form method="post" action="/showjoke">
+  <%= erb :joke_form_params %>
+  <button class="btn-primary">Show me a joke</button>
+</form>
