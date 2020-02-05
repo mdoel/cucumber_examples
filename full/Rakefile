@@ -1,0 +1,16 @@
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+task :default => :test
+
+desc "Run both unit and integration tests"
+task :test => [:spec, :features]
+
+desc "Run all specs in spec directory"
+RSpec::Core::RakeTask.new(:spec)
+
+Cucumber::Rake::Task.new(:features) do |t|
+  t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
+end

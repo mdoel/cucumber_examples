@@ -1,0 +1,20 @@
+<div class="joke_shell">
+  Prepare to laugh. Here is the next joke...
+  <p class="joke">
+    <%= JokeFetcher.retrieve %>
+  </p>
+</div>
+<div class="rate_joke">
+  Did you like the joke?
+  <div>
+    <form method="post" action="joke_stats">
+      <%= erb :joke_form_params %>
+      <button id="thumbs_up" class="thumb" type="submit" name="like" value="yes">
+        <img src="thumbs_up.png">
+      </button>
+      <button id="thumbs_down" class="thumb" type="submit" name="like" value="no">
+        <img src="thumbs_down.png">
+      </button>
+    </form>
+  </div>
+</div>

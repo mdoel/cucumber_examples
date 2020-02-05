@@ -1,0 +1,52 @@
+body {
+  background-color: white;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-left: 30px;
+  color: #c03f4c;
+}
+
+.header div {
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.thumb {
+  background: white;
+  border: none;
+}
+
+.joke {
+  font-style: italic;
+  font-size: large;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 30px;
+}
+
+.rate_joke {
+  margin-top: 20px;
+}
+
+.likestat {
+  margin-bottom: 30px;
+}
+
+.likestat span {
+  font-style: italic;
+}

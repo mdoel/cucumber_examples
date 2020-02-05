@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'cucumber'
+gem 'rspec'
+gem 'rspec-expectations'
+gem 'capybara'
+gem 'faraday'
+gem 'vcr'
+gem 'selenium-webdriver'

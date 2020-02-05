@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://icanhazdadjoke.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+      Accept:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 04 Feb 2020 22:27:36 GMT
+      content-type:
+      - text/plain
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      set-cookie:
+      - __cfduid=d5d419ea2642ee85941d268207f6d43391580855256; expires=Thu, 05-Mar-20
+        22:27:36 GMT; path=/; domain=.icanhazdadjoke.com; HttpOnly; SameSite=Lax
+      cache-control:
+      - max-age=0, must-revalidate, no-cache, no-store, public, s-maxage=0
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      cf-cache-status:
+      - DYNAMIC
+      expect-ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      strict-transport-security:
+      - max-age=15552000; includeSubDomains
+      x-content-type-options:
+      - nosniff
+      server:
+      - cloudflare
+      cf-ray:
+      - 560012a83f51a637-IND
+    body:
+      encoding: ASCII-8BIT
+      string: what do you call a dog that can do magic tricks? a labracadabrador
+    http_version: 
+  recorded_at: Tue, 04 Feb 2020 22:27:36 GMT
+recorded_with: VCR 5.0.0
