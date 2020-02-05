@@ -3,7 +3,6 @@ Then(/^I should see '(.*)'$/) do |text|
 end
 
 Then("I should see a {string} button") do |button_label|
-  # pending # Write code here that turns the phrase above into concrete actions
   expect(page).to have_selector(:link_or_button, button_label)
 end
 
@@ -21,4 +20,8 @@ end
   
 Then("I should see the joke stats page") do
   expect(page).to have_current_path("/joke_stats")
+end
+
+Then("I should see a welcoming greeting") do
+  expect(page.find("#greeting").text).to_not eql('')
 end

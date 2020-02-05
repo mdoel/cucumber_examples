@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'pry'
 
 require File.dirname(__FILE__) + '/../../app'
 
@@ -9,18 +10,8 @@ Capybara.app = Application
 
 require "selenium/webdriver"
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+Before('@js') do
+  Capybara.run_server = false
+  Capybara.current_driver = :selenium_chrome
+  Capybara.app_host = 'http://localhost:9292'
 end
-
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless disable-gpu) }
-  )
-
-  Capybara::Selenium::Driver.new app,
-    browser: :chrome,
-    desired_capabilities: capabilities
-end
-
-Capybara.javascript_driver = :headless_chrome

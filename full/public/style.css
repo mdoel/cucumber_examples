@@ -26,6 +26,10 @@ h1 {
   display: inline-block;
 }
 
+#greeting{
+  margin-bottom: 20px;
+}
+
 .thumb {
   background: white;
   border: none;
