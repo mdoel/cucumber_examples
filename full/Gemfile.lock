@@ -95,6 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  childprocess
   cucumber
   faraday
   pry
