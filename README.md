@@ -13,3 +13,18 @@ This repository is useful for someone looking to learn a bit of cucumber by exam
 - The `sinatra` example demonstrates a minimal ruby web app being exercised with the Rack::Test driver and [Capybara](https://github.com/teamcapybara/capybara) gem.
 - The `dadjoke` example is a more complete sinatra example that includes several features. It also shows how the [VCR gem](https://github.com/vcr/vcr) can be used to isolate running the test from the icanhazdadjoke API used for content.
 - The `full` example is an extension of `dadjoke`.
+
+## Setup
+In order to get these examples working, you may need to install some things onto your local machine.
+
+The java example presumes you have [Java Standard Edition](https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) as
+well as the [Maven](https://maven.apache.org/index.html) build tool. Within the hellocucumber directory of the java sample,
+running `mvnw test` from the command line will execute the cucumber features.
+
+The other examples use Ruby and [Bundler](https://bundler.io) as a foundation. Inside each directory, you'll first want to
+run `bundle install` to ensure any ruby gems are installed. From there `rake features` will run the execute the acceptance tests.
+
+Finally, a few of the examples make use of [Selenium WebDriver](https://selenium.dev/projects/) for automating your browser. In
+the `full` example, the automation exercises Chrome via [ChromeDriver](https://chromedriver.chromium.org). In the `google`
+example, Safari is used via the Apple provided version of [SafariDriver](https://developer.apple.com/documentation/webkit/about_webdriver_for_safari).
+Depending on your local environment, you may want or need to change the driver instance used.
