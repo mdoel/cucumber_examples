@@ -14,10 +14,31 @@ Before('@js') do
   Capybara.run_server = false
   Capybara.current_driver = :selenium_chrome
   Capybara.app_host = 'http://localhost:3000'
+  use_remote_driver if using_wsl?
   @process = ChildProcess.build('rackup', '-p', '3000')
   @process.start
 end
 
 After('@js') do
   @process.stop
+end
+
+# Using Windows Subsystem for Linux or some other setup that requires
+# webdriver to execute on a remote environment? This gist:
+#
+# https://gist.github.com/danwhitston/5cea26ae0861ce1520695cff3c2c3315
+#
+# provides tips for getting that setup. Note that you'll need to have the 
+# selenium server running before executing these tests. In my case, I have
+# created a simple shell script that I execute out of my bin directory from
+# within git bash.
+def using_wsl?
+  ENV.keys.any?{||variable| variable.upcase =~ /\AWSL/}
+end
+
+def use_remote_driver
+  Capybara.current_driver = :selenium_remote_chrome
+  Capybara.register_driver 'selenium_remote_chrome'.to_sym do |app|
+    Capybara::Selenium::Driver.new(app, browser: :remote, url: 'http://localhost:4445/wd/hub', desired_capabilities: :chrome)
+  end 
 end
