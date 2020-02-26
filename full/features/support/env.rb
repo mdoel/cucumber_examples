@@ -33,7 +33,9 @@ end
 # created a simple shell script that I execute out of my bin directory from
 # within git bash.
 def using_wsl?
-  ENV.keys.any?{||variable| variable.upcase =~ /\AWSL/}
+  ENV.keys.any? do |env_var|
+    env_var.upcase =~ /\AWSL/
+  end
 end
 
 def use_remote_driver
