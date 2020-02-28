@@ -16,12 +16,23 @@ Before('@javascript') do
   Capybara.current_driver = :selenium_chrome
   Capybara.app_host = 'http://localhost:3000'
   use_remote_driver if using_wsl?
-  @process = ChildProcess.build('rackup', '-p', '3000')
+  rackup = rackup_for_env
+  @process = ChildProcess.build(rackup, '-p', '3000')
   @process.start
 end
 
 After('@javascript') do
   @process.stop
+end
+
+def rackup_for_env
+  git_for_windows = ENV.keys.any? {|env_var| env_var.upcase =~ /\AMINGW/}
+  powershell = ENV.keys.any? {|env_var| env_var.upcase =~ /\APSMODULEPATH/}
+  if git_for_windows || powershell
+    'rackup.bat'
+  else
+    'rackup'
+  end
 end
 
 # Using Windows Subsystem for Linux or some other setup that requires
