@@ -10,7 +10,8 @@ Capybara.app = Application
 
 require "selenium/webdriver"
 
-Before('@js') do
+
+Before('@javascript') do
   Capybara.run_server = false
   Capybara.current_driver = :selenium_chrome
   Capybara.app_host = 'http://localhost:3000'
@@ -19,7 +20,7 @@ Before('@js') do
   @process.start
 end
 
-After('@js') do
+After('@javascript') do
   @process.stop
 end
 
